@@ -26,11 +26,12 @@ namespace OdeToFood2
         public void ConfigureServices(IServiceCollection services)
         {
             //Configure EntityFramework Core to use SQL and my connectionstring
-            //services.AddDbContextPool<OdeToFoodDbContext>(options =>
-            //options.UseSqlServer(Configuration.GetConnectionString("OdeToFoodDb"))
-            //); ;
+            services.AddDbContextPool<OdeToFoodDbContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("OdeToFoodDb"))
+            ); 
 
-            services.AddSingleton<IRestaurantData, InMemoryRestaurantData>();
+            //services.AddSingleton<IRestaurantData, InMemoryRestaurantData>();  
+            services.AddScoped<IRestaurantData, SqlRestaurantData>();
             services.AddRazorPages();
         }
 
