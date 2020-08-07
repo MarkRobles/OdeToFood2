@@ -45,7 +45,13 @@
                asp-route-restaurantId="@restaurant.Id">
                 <i class="fas fa-edit"></i>
             </a>
-       
+        </td>
+        <td>
+            <a class="btn btn-lg"
+               asp-page="./Delete"
+               asp-route-restaurantId="@restaurant.Id">
+                <i class="fas fa-trash-alt"></i>
+            </a>
         </td>
     </tr>
     }
@@ -53,3 +59,7 @@
 
 
 <a asp-page="./Edit" class="btn btn-primary">Add New</a>
+
+@section footer{ 
+    Esta es una seccion en el layout
+}
