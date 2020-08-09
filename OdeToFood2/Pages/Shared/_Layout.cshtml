@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - OdeToFood2</title>
+  
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <script src="https://kit.fontawesome.com/0b191f0c83.js" crossorigin="anonymous"></script>
@@ -13,7 +14,13 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">OdeToFood2</a>
+                <!-- Just an image -->
+                <nav class="navbar navbar-light bg-light">
+                    <a class="navbar-brand" asp-page="/Index">                   
+                        <img src="~/images/OdeToFood.png" width="300" height="30" alt="" loading="lazy" />
+                    </a>
+                </nav>
+               
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -46,6 +53,7 @@
             @RenderSection("footer",required:false)
             <vc:restaurant-count></vc:restaurant-count>
             &copy; 2020 - OdeToFood2 - <a asp-area="" asp-page="/Privacy">Privacy</a>
+                                     
         </div>
     </footer>
 

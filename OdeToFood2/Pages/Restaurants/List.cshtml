@@ -4,31 +4,42 @@
     ViewData["Title"] = "Restaurants";
 }
 
-<h1>@ViewData["Title"]</h1>
+<div class="row">
+    <div class="col-12"><h1>@ViewData["Title"]</h1></div>
 
-<div class="col-3  offset-9">
-    <form method="get">
-        <div class="form-group">
-            <div class="d-flex">
-                <input type="search" class="form-control" asp-for="SearchTerm" />
-                <span class="input-group-btn">
-                    <i class="fas fa-search fa-2x"></i>
-                </span>
+
+    <div class="col-3  offset-9">
+        <form method="get">
+            <div class="form-group">
+                <div class="d-flex">
+                    <input type="search" class="form-control" asp-for="SearchTerm" />
+                    <span class="input-group-btn">
+                        <i class="fas fa-search fa-2x"></i>
+                    </span>
+                </div>
+
             </div>
+        </form>
+    </div>
 
-        </div>
-    </form>
+
+    @foreach (var restaurant in Model.Restaurants)
+    {
+        <partial name="_Summary" model="restaurant" />
+    }
+
+
+
+    <div class="col-12 mt-3">
+        <a asp-page="./Edit" class="btn btn-primary">Add New</a>
+    </div>
+
+
+    <div class="col-12">
+        @section footer{
+            Esta es una seccion en el layout
+        }
+    </div>
+
+
 </div>
-
-
-@foreach (var restaurant in Model.Restaurants)
-{
-    <partial name="_Summary" model="restaurant" />
-}
-
-
-<a asp-page="./Edit" class="btn btn-primary">Add New</a>
-
-@section footer{ 
-    Esta es una seccion en el layout
-}
