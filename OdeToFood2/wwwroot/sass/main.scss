@@ -1,0 +1,7 @@
+
+@import "../sass/utils/_variables.scss";
+
+$theme-colors: ( "primary": $color-primary, "secondary": $color-secondary, "success": $color-success, "info": $color-info, "warning": $color-warning, "danger": $color-danger, "light": $color-primary-light-2, "dark": $color-primary-dark-1 );
+
+
+@import "../bootstrap/scss/bootstrap.scss";
